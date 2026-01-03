@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="loading-screen">
+        <svg class="signature-svg" viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
+             <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" 
+                   class="signature-path" 
+                   font-family="'Great Vibes', cursive, 'Brush Script MT', serif" 
+                   font-size="55" font-weight="normal">
+                   Saloni Pratisruti
+             </text>
+        </svg>
+    </div>
+
+    <!-- Include Google Font for Signature -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <div id="progress"></div>
+    <div class="cursor"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Top Left: Dark Mode Toggle (Acting as brand/logo based on image) -->
+            <button class="dark-btn" onclick="toggleDark()"><i class='bx bx-sun'></i></button>
+            
+            <!-- Top Right: Navigation Links -->
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link" onclick="closeMenu()">Home</a>
+                <a href="#projects" class="nav-link" onclick="closeMenu()">Projects</a>
+                <a href="#education" class="nav-link" onclick="closeMenu()">Education</a>
+                <a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Icon -->
+            <div class="menu-btn" onclick="toggleMenu()">
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="hero-container">
+            <!-- Left Column: Content -->
+            <div class="hero-text">
+                <h1>Saloni Pratisruti</h1>
+                <h2 class="role-text">I am a <span id="typing"></span></h2>
+                
+                <p class="bio-text">
+                    I am a passionate Java Developer and Web Developer.
+                    I enjoy building clean, aesthetic, and user-friendly web applications.
+                    Always learning and innovating to create impactful digital experiences.
+                </p>
+
+                <p class="social-text">
+                    You can find me on 
+                    <a href="#" target="_blank">LinkedIn</a>, 
+                    <a href="#" target="_blank">Github</a>, 
+                    <a href="#" target="_blank">Twitter</a>.
+                </p>
+ 
+            
+                
+                <a href="resume.pdf" download class="resume-btn">
+                    View Resume <i class='bx bx-file-blank'></i>
+                </a>
+
+                <div class="tech-stack">
+                    <div class="tech-badge"><i class='bx bxl-java'></i> Java</div>
+                    <div class="tech-badge"><i class='bx bxl-javascript'></i> JavaScript</div>
+                    <div class="tech-badge"><i class='bx bxl-html5'></i> HTML</div>
+                    <div class="tech-badge"><i class='bx bxl-css3'></i> CSS</div>
+                    <div class="tech-badge"><i class='bx bxs-data'></i> SQL</div>
+
+                </div>
+            </div>
+
+            <!-- Right Column: Image -->
+            <div class="hero-img-container">
+                <img src="saloni1.jpeg" alt="Saloni Pratisruti" class="hero-profile-img">
+            </div>
+        </div>
+    </header>
+
+<section id="education" class="section-container">
+    <h2 class="section-title reveal">Education</h2>
+    
+    <div class="education-grid">
+        <!-- Item 1 -->
+        <div class="edu-card reveal">
+            <div class="edu-icon"><i class='bx bxs-graduation'></i></div>
+            <div class="edu-content">
+                <span class="edu-year">2023 – 2026</span>
+                <h3>BSc (Computer Science)</h3>
+                <p>Lakshaya Institute of Technology</p>
+                <p class="edu-desc">
+                    Specialized in Software Development and Data Structures. 
+                    Active member of the coding club and participated in multiple hackathons.
+                </p>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="edu-card reveal">
+            <div class="edu-icon"><i class='bx bxs-school'></i></div>
+            <div class="edu-content">
+                <span class="edu-year">2021 – 2023</span>
+                <h3>Higher Secondary (12th)</h3>
+                <p>Regional Higher Secondary School</p>
+                <p class="edu-desc">
+                    Completed Science stream with a focus on Mathematics and Computer Science.
+                    Achieved distinction in final examinations.
+                </p>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="edu-card reveal">
+            <div class="edu-icon"><i class='bx bxs-book'></i></div>
+            <div class="edu-content">
+                <span class="edu-year">2020 – 2021</span>
+                <h3>Secondary (10th)</h3>
+                <p>Saraswati Shishu Vidya Mandir</p>
+                <p class="edu-desc">
+                    Built a strong foundation in core subjects. Active participant in science exhibitions and quizzes.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="section-container">
+    <h2 class="section-title reveal">Technical Skills</h2>
+
+    <div class="skills-grid">
+        <!-- Java -->
+        <div class="skill-box reveal">
+            <div class="skill-header">
+                <div class="skill-name"><i class='bx bxl-java'></i> Java</div>
+                <div class="skill-pct">90%</div>
+            </div>
+            <div class="s-bar"><div class="s-fill" style="width: 90%"></div></div>
+        </div>
+
+        <!-- HTML/CSS -->
+        <div class="skill-box reveal">
+            <div class="skill-header">
+                <div class="skill-name"><i class='bx bxl-html5'></i> HTML & CSS</div>
+                <div class="skill-pct">95%</div>
+            </div>
+            <div class="s-bar"><div class="s-fill" style="width: 95%"></div></div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-box reveal">
+            <div class="skill-header">
+                <div class="skill-name"><i class='bx bxl-javascript'></i> JavaScript</div>
+                <div class="skill-pct">80%</div>
+            </div>
+            <div class="s-bar"><div class="s-fill" style="width: 80%"></div></div>
+        </div>
+
+
+
+        <!-- SQL -->
+        <div class="skill-box reveal">
+            <div class="skill-header">
+                <div class="skill-name"><i class='bx bxs-data'></i> SQL / DBMS</div>
+                <div class="skill-pct">85%</div>
+            </div>
+            <div class="s-bar"><div class="s-fill" style="width: 85%"></div></div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-box reveal">
+            <div class="skill-header">
+                <div class="skill-name"><i class='bx bxl-git'></i> Git & GitHub</div>
+                <div class="skill-pct">85%</div>
+            </div>
+            <div class="s-bar"><div class="s-fill" style="width: 85%"></div></div>
+        </div>
+    </div>
+</section>
+
+
+<section id="projects" class="section-container">
+    <h2 class="section-title reveal">Featured Projects</h2>
+
+    <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card reveal">
+            <div class="project-img-wrapper">
+                <img src="STUEDNT.png" alt="Student Management System" class="project-img">
+            </div>
+            <div class="project-content">
+                <h3>Student Management System</h3>
+                <p>A comprehensive desktop application for managing student records, attendance, and grades efficiently with a secure login system.</p>
+                
+                <div class="project-tags">
+                    <span>Java</span>
+                    <span>Swing</span>
+                    <span>MySQL</span>
+                    <span>JDBC</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/" target="_blank" class="github-link">
+                        <i class='bx bxl-github'></i> View Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal">
+            <div class="project-img-wrapper">
+                <img src="image.png" alt="Portfolio Website" class="project-img">
+            </div>
+            <div class="project-content">
+                <h3>Personal Portfolio</h3>
+                <p>A responsive, aesthetic portfolio website showcasing my skills and projects. Features a custom dark mode, GSAP animations, and glassmorphism.</p>
+                
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>GSAP</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/" target="_blank" class="github-link">
+                        <i class='bx bxl-github'></i> View Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="certificates" class="section-container">
+    <h2 class="section-title reveal">Certifications</h2>
+
+    <div class="certificates-grid">
+        <!-- Certificate 1 -->
+        <div class="cert-card reveal" onclick="openCert('cert1.jpg')">
+            <div class="cert-img-wrapper">
+                <img src="https://placehold.co/600x400/ec4899/white?text=Java+Cert" alt="Java Certificate" class="cert-img">
+                <div class="cert-overlay"><i class='bx bx-zoom-in'></i></div>
+            </div>
+            <div class="cert-content">
+                <h3>Java Programming</h3>
+                <p class="cert-issuer">Issued by: Oracle / Coursera</p>
+                <span class="cert-date">Dec 2024</span>
+            </div>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="cert-card reveal" onclick="openCert('cert2.jpg')">
+            <div class="cert-img-wrapper">
+                <img src="https://placehold.co/600x400/ec4899/white?text=Web+Dev" alt="Web Development" class="cert-img">
+                <div class="cert-overlay"><i class='bx bx-zoom-in'></i></div>
+            </div>
+            <div class="cert-content">
+                <h3>Web Development</h3>
+                <p class="cert-issuer">Issued by: Udemy</p>
+                <span class="cert-date">Nov 2024</span>
+            </div>
+        </div>
+
+        <!-- Add more certs here following the same pattern -->
+    </div>
+</section>
+
+<!-- Certificate Modal -->
+<div id="certModal" class="modal">
+    <span class="close" onclick="closeCert()">&times;</span>
+    <img id="certImg">
+</div>
+
+
+<section id="contact" class="section-container">
+  <h2 class="section-title reveal">Get In Touch</h2>
+  <div class="contact-wrapper reveal">
+      <!-- Left Side: Info -->
+      <div class="contact-info">
+          <h3>Let's Connect</h3>
+          <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+          
+          <div class="contact-details">
+             <div class="c-item">
+                <i class='bx bxs-envelope'></i> 
+                <span>salonipratisruti@gmail.com</span>
+             </div>
+             <div class="c-item">
+                <i class='bx bxs-map'></i> 
+                <span>Bhubaneswar, India</span>
+             </div>
+          </div>
+
+          <div class="contact-socials">
+              <a href="https://linkedin.com/" target="_blank" class="c-social-link"><i class='bx bxl-linkedin'></i></a>
+              <a href="https://github.com/" target="_blank" class="c-social-link"><i class='bx bxl-github'></i></a>
+              <a href="#" class="c-social-link"><i class='bx bxl-twitter'></i></a>
+          </div>
+      </div>
+
+      <!-- Right Side: Form -->
+      <form class="contact-form" onsubmit="return validateForm()">
+          <div class="form-group">
+              <label>Name</label>
+              <input type="text" id="name" placeholder="John Doe">
+          </div>
+          <div class="form-group">
+               <label>Email</label>
+               <input type="email" id="email" placeholder="john@example.com">
+           </div>
+           <div class="form-group">
+               <label>Message</label>
+               <textarea id="message" placeholder="Your message here..."></textarea>
+           </div>
+           <button type="submit" class="send-btn">Send Message <i class='bx bx-send'></i></button>
+      </form>
+  </div>
+</section>
+
+<footer>
+    © 2026 Saloni Pratisruti
+</footer>
+
+<script src="script.js"></script>
+<button id="topBtn" onclick="scrollToTop()">⬆</button>
+
+</body>
+</html>
